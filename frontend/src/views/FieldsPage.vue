@@ -1,16 +1,26 @@
 <template>
   <div class="space-y-6 pb-12">
-    <!-- Header -->
-    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-      <div>
-        <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100">Manajemen Lahan Pertanian</h1>
-        <p class="text-sm text-slate-500">Kelola pemetaan polygon lahan, tipe tanah, fase tanaman, dan riwayat penyiraman.</p>
-      </div>
+    <!-- Header Banner (White & Simple theme) -->
+    <div class="relative overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-6 md:p-8 text-slate-800">
+      <div class="relative z-10 max-w-7xl">
+        <div class="inline-flex items-center gap-2 rounded-full bg-emerald-50 border border-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">
+          <MapPin class="h-3.5 w-3.5 text-emerald-600" />
+          <span>Sistem Cerdas Pengelolaan Irigasi Lahan Pertanian</span>
+        </div>
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mt-4">
+          <div class="space-y-2 max-w-2xl">
+            <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900">Manajemen Lahan Pertanian</h1>
+            <p class="text-sm md:text-base text-slate-500 leading-relaxed">
+              Kelola pemetaan polygon lahan, tipe tanah, fase tanaman, dan riwayat penyiraman secara presisi untuk memaksimalkan hasil panen.
+            </p>
+          </div>
 
-      <Button variant="agri" @click="showAddModal = true">
-        <Plus class="h-4 w-4 mr-2" />
-        Tambah Lahan Baru
-      </Button>
+          <Button variant="agri" @click="showAddModal = true" class="shrink-0">
+            <Plus class="h-4.5 w-4.5 mr-2" />
+            Tambah Lahan Baru
+          </Button>
+        </div>
+      </div>
     </div>
 
     <!-- Map Full Width View -->

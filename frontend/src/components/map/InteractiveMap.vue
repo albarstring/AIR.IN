@@ -1,9 +1,9 @@
 <template>
-  <div class="relative w-full h-full min-h-[350px] rounded-xl overflow-hidden border border-slate-200 shadow-sm dark:border-slate-800">
+  <div class="relative w-full h-full min-h-[350px] rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800">
     <div ref="mapContainer" class="w-full h-full min-h-[350px]"></div>
 
     <!-- Map Legend Overlay -->
-    <div class="absolute bottom-4 right-4 z-[500] bg-white/90 backdrop-blur-md px-3 py-2 rounded-lg border border-slate-200 shadow-lg text-xs dark:bg-slate-900/90 dark:border-slate-800">
+    <div class="absolute bottom-4 right-4 z-[500] bg-white/90 backdrop-blur-md px-3 py-2 rounded-lg border border-slate-200 text-xs dark:bg-slate-900/90 dark:border-slate-800">
       <div class="font-semibold text-slate-800 dark:text-slate-200 mb-1">Tingkat Risiko Irigasi</div>
       <div class="space-y-1">
         <div class="flex items-center gap-2">

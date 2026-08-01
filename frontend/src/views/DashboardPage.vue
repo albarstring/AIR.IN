@@ -1,21 +1,21 @@
 <template>
   <div class="space-y-6 pb-12">
-    <!-- Header Banner -->
-    <div class="relative overflow-hidden rounded-2xl bg-slate-900 p-6 md:p-8 text-white shadow-md">
+    <!-- Header Banner (White & Simple theme) -->
+    <div class="relative overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-6 md:p-8 text-slate-800">
       <div class="relative z-10 max-w-3xl space-y-2">
-        <div class="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-1 text-xs font-semibold backdrop-blur-md">
-          <Sparkles class="h-3.5 w-3.5 text-emerald-300" />
+        <div class="inline-flex items-center gap-2 rounded-full bg-emerald-50 border border-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">
+          <Sparkles class="h-3.5 w-3.5 text-emerald-600" />
           <span>Sistem Cerdas Pengelolaan Irigasi Lahan Pertanian</span>
         </div>
-        <h1 class="text-2xl md:text-4xl font-extrabold tracking-tight">Dashboard Alokasi Air &amp; Pemantauan Lahan</h1>
-        <p class="text-sm md:text-base text-emerald-100/90 leading-relaxed">
+        <h1 class="text-2xl md:text-4xl font-extrabold tracking-tight text-slate-900">Dashboard Alokasi Air &amp; Pemantauan Lahan</h1>
+        <p class="text-sm md:text-base text-slate-500 leading-relaxed">
           Optimalkan distribusi air pertanian secara presisi dengan perhitungan skor risiko kekeringan berbasis kondisi tanah, fase tanaman, dan data cuaca Open-Meteo real-time.
         </p>
       </div>
 
-      <!-- Decorative Background Circle -->
-      <div class="absolute -right-12 -top-12 h-64 w-64 rounded-full bg-emerald-500/20 blur-3xl"></div>
-      <div class="absolute right-32 -bottom-16 h-48 w-48 rounded-full bg-teal-400/20 blur-2xl"></div>
+      <!-- Decorative Background Circle (Soft & Clean) -->
+      <div class="absolute -right-12 -top-12 h-64 w-64 rounded-full bg-emerald-500/5 blur-3xl"></div>
+      <div class="absolute right-32 -bottom-16 h-48 w-48 rounded-full bg-teal-400/5 blur-2xl"></div>
     </div>
 
     <!-- Key Metrics Section -->
@@ -53,19 +53,19 @@
     <!-- El Niño Simulator & Weather Forecast Row -->
     <div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
       <!-- El Nino Live Slider Card -->
-      <Card class="p-5 flex flex-col justify-between border-amber-200/80 bg-amber-50/40 dark:bg-amber-950/20 dark:border-amber-900/60">
+      <Card class="p-5 flex flex-col justify-between border-sky-200/80 bg-sky-50/40">
         <div>
           <div class="flex items-center justify-between">
             <div class="flex items-center gap-2">
-              <div class="p-2 rounded-lg bg-amber-500/10 text-amber-600 dark:text-amber-400">
+              <div class="p-2 rounded-lg bg-sky-500/10 text-sky-600">
                 <Flame class="h-5 w-5" />
               </div>
               <div>
-                <h3 class="font-bold text-slate-900 dark:text-slate-100">Simulator Keparahan El Niño</h3>
+                <h3 class="font-bold text-slate-900">Simulator Keparahan El Niño</h3>
                 <p class="text-xs text-slate-500">Geser untuk simulasi dampak ancaman kekeringan</p>
               </div>
             </div>
-            <span class="rounded-full bg-amber-600 text-white px-2.5 py-0.5 text-xs font-bold shadow-sm">
+            <span class="rounded-full bg-sky-600 text-white px-2.5 py-0.5 text-xs font-bold">
               Level {{ fieldStore.elNinoSeverity }} / 10
             </span>
           </div>
@@ -78,7 +78,7 @@
               step="1"
               :value="fieldStore.elNinoSeverity"
               @input="(e: any) => fieldStore.setElNinoSeverity(Number(e.target.value))"
-              class="w-full h-2.5 bg-amber-200 rounded-lg appearance-none cursor-pointer accent-amber-600 dark:bg-amber-900"
+              class="w-full h-2.5 bg-sky-200 rounded-lg appearance-none cursor-pointer accent-sky-600"
             />
             <div class="flex justify-between text-[11px] font-semibold text-slate-500">
               <span>Level 1 (Normal)</span>
@@ -88,7 +88,7 @@
           </div>
         </div>
 
-        <div class="mt-4 pt-3 border-t border-amber-200/60 text-xs text-amber-800 dark:text-amber-300 flex items-center justify-between">
+        <div class="mt-4 pt-3 border-t border-sky-200/60 text-xs text-sky-800 flex items-center justify-between">
           <span>Efek Simulasi:</span>
           <span class="font-semibold">+{{ (fieldStore.elNinoSeverity - 1) * 8 }}% Tambahan Defisit Air</span>
         </div>

@@ -1,7 +1,6 @@
 <template>
   <div class="min-h-screen bg-slate-50 text-slate-800 font-sans selection:bg-emerald-500 selection:text-white overflow-x-hidden relative">
-    <!-- Background Grid Effect (Kotak-kotak) -->
-    <div class="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none"></div>
+    <!-- (Grid effect moved inside Hero Section for precise control) -->
 
     <!-- Header Navbar -->
     <header class="sticky top-0 z-50 w-full border-b border-slate-200/80 bg-white/80 backdrop-blur-md">
@@ -36,11 +35,17 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="relative pt-12 pb-24 md:pt-20 md:pb-32 px-4 md:px-8">
+    <section class="relative pt-12 pb-24 md:pt-20 md:pb-32 px-4 md:px-8 bg-slate-100/60 border-b border-slate-200/50 overflow-hidden">
+      <!-- Background Grid Effect (Kotak-kotak) -->
+      <div class="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1.5px,transparent_1.5px),linear-gradient(to_bottom,#e2e8f0_1.5px,transparent_1.5px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_75%,transparent_100%)] pointer-events-none"></div>
+
+      <!-- Soft Gray Ambient Glow (Hides grid lines softly behind the text without forming a card box) -->
+      <div class="absolute top-1/2 -translate-y-1/2 left-0 w-[55%] h-[75%] bg-slate-100/95 rounded-full filter blur-3xl pointer-events-none"></div>
+
       <div class="container mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         <!-- Hero Left / Copywriting -->
-        <div class="lg:col-span-7 space-y-8 text-left">
-          <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-50 px-4 py-1.5 text-xs font-semibold text-emerald-700 backdrop-blur-md">
+        <div class="lg:col-span-7 space-y-8 text-left relative z-10">
+          <div class="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-50 px-4 py-1.5 text-xs font-semibold text-emerald-700">
             <Sparkles class="h-4 w-4 text-emerald-600" />
             <span>Solusi Cerdas Irigasi Menghadapi El Niño</span>
           </div>

@@ -1,28 +1,38 @@
 <template>
   <div class="space-y-6 pb-12">
-    <!-- Header -->
-    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-      <div>
-        <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-slate-100">Alokasi Air Irigasi &amp; Ranking Prioritas</h1>
-        <p class="text-sm text-slate-500">Distribusi kuota air secara adil berdasarkan skor kelangkaan, jenis tanah, &amp; El Niño simulator.</p>
-      </div>
+    <!-- Header Banner (White & Simple theme) -->
+    <div class="relative overflow-hidden rounded-2xl border border-slate-200/80 bg-white p-6 md:p-8 text-slate-800">
+      <div class="relative z-10 max-w-7xl">
+        <div class="inline-flex items-center gap-2 rounded-full bg-emerald-50 border border-emerald-100 px-3 py-1 text-xs font-semibold text-emerald-700">
+          <Scale class="h-3.5 w-3.5 text-emerald-600" />
+          <span>Sistem Cerdas Pengelolaan Irigasi Lahan Pertanian</span>
+        </div>
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mt-4">
+          <div class="space-y-2 max-w-2xl">
+            <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900">Alokasi Air Irigasi &amp; Ranking Prioritas</h1>
+            <p class="text-sm md:text-base text-slate-505 text-slate-500 leading-relaxed">
+              Distribusi kuota air secara adil dan transparan berdasarkan skor kelangkaan, jenis tanah, &amp; El Niño simulator secara real-time.
+            </p>
+          </div>
 
-      <Button variant="agri" @click="shareToWhatsApp">
-        <MessageSquare class="h-4 w-4 mr-2" />
-        Kirim Rekomendasi via WhatsApp
-      </Button>
+          <Button variant="agri" @click="shareToWhatsApp" class="shrink-0">
+            <MessageSquare class="h-4.5 w-4.5 mr-2" />
+            Kirim Rekomendasi via WhatsApp
+          </Button>
+        </div>
+      </div>
     </div>
 
     <!-- Simulator & Supply Config Cards -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <!-- El Nino Simulator Slider -->
-      <Card class="p-5 border-amber-200 bg-amber-50/40 dark:border-amber-900/60 dark:bg-amber-950/20">
+      <Card class="p-5 border-sky-200/80 bg-sky-50/40">
         <div class="flex items-center justify-between mb-3">
           <div class="flex items-center gap-2">
-            <Flame class="h-5 w-5 text-amber-600" />
-            <h3 class="font-bold text-slate-900 dark:text-slate-100">Simulator Keparahan El Niño</h3>
+            <Flame class="h-5 w-5 text-sky-600" />
+            <h3 class="font-bold text-slate-900">Simulator Keparahan El Niño</h3>
           </div>
-          <Badge variant="warning">Level {{ fieldStore.elNinoSeverity }} / 10</Badge>
+          <Badge variant="secondary">Level {{ fieldStore.elNinoSeverity }} / 10</Badge>
         </div>
         <p class="text-xs text-slate-500 mb-4">Makin tinggi level, makin tinggi faktor penalti kelangkaan air tanah.</p>
 
@@ -33,7 +43,7 @@
           step="1"
           :value="fieldStore.elNinoSeverity"
           @input="(e: any) => fieldStore.setElNinoSeverity(Number(e.target.value))"
-          class="w-full h-2.5 bg-amber-200 rounded-lg appearance-none cursor-pointer accent-amber-600 dark:bg-amber-900"
+          class="w-full h-2.5 bg-sky-200 rounded-lg appearance-none cursor-pointer accent-sky-600"
         />
         <div class="flex justify-between text-[11px] font-semibold text-slate-500 mt-2">
           <span>Level 1 (Normal)</span>
@@ -139,7 +149,7 @@ import { formatLiters } from '../lib/utils'
 import Button from '../components/ui/Button.vue'
 import Card from '../components/ui/Card.vue'
 import Badge from '../components/ui/Badge.vue'
-import { Flame, Droplets, MessageSquare } from '@lucide/vue'
+import { Flame, Droplets, MessageSquare, Scale } from '@lucide/vue'
 
 const fieldStore = useFieldStore()
 
